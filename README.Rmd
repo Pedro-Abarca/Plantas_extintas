@@ -14,3 +14,14 @@ Se comienza a trabajar con los datos sobre plantas extintas en silvestria y plan
 ## Trabajando con los datos
 
 Comenzamos cargando los paquetes necesarios para trabajar.
+
+```{r}
+library(tidyverse)
+```
+
+Ahora voy a leer los datos con los que trabajare
+
+```{r}
+plants <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
+```
+
