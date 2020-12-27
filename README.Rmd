@@ -25,3 +25,15 @@ Ahora voy a leer los datos con los que trabajare
 plants <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-08-18/plants.csv')
 ```
 
+## Filtrando los datos para resolver el ejemplo 1
+
+El código que voy a ejecutar ahora es para resolver el problema en el siguiente slide. Para poner en la base de datos, solo los datos de Chile.
+
+```{r}
+Chile <- plants %>% 
+  dplyr::filter(country == "Chile") %>% 
+  dplyr::select(binomial_name, country, red_list_category)
+
+Chile
+```
+

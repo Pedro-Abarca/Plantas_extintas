@@ -14,14 +14,14 @@ Comenzamos cargando los paquetes necesarios para trabajar.
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ─────────────────────────────────────────── tidyverse 1.3.0 ──
+    ## ── Attaching packages ───────────────────────────────────────────── tidyverse 1.3.0 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   1.0.1
     ## ✓ tidyr   1.1.1     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.5.0
 
-    ## ── Conflicts ────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ──────────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -43,3 +43,23 @@ plants <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesda
     ## )
 
     ## See spec(...) for full column specifications.
+
+## Filtrando los datos para resolver el ejemplo 1
+
+El código que voy a ejecutar ahora es para resolver el problema en el
+siguiente slide. Para poner en la base de datos, solo los datos de
+Chile.
+
+``` r
+Chile <- plants %>% 
+  dplyr::filter(country == "Chile") %>% 
+  dplyr::select(binomial_name, country, red_list_category)
+
+Chile
+```
+
+    ## # A tibble: 2 x 3
+    ##   binomial_name           country red_list_category  
+    ##   <chr>                   <chr>   <chr>              
+    ## 1 Santalum fernandezianum Chile   Extinct            
+    ## 2 Sophora toromiro        Chile   Extinct in the Wild
