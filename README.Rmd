@@ -37,3 +37,14 @@ Chile <- plants %>%
 Chile
 ```
 
+## Resumen de especie por pais
+
+```{r}
+Resumen <- plants %>% 
+  dplyr::filter(continent == "South America") %>% 
+  group_by(country) %>% 
+  summarise(n_species = n())
+
+Resumen
+```
+
